@@ -151,7 +151,7 @@ module.exports.importConfig = async (obj) => {
         await config.update({value: validate.value}, {where: {key: key}});
     }
 
-    if (recommendations.length > 1) return false;
+    if (obj.recommendations.length > 1) return false;
 
     await node.destroy({where: {}});
     await recommendations.destroy({where: {}});
